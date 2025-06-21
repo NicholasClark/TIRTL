@@ -60,7 +60,7 @@ def madhyper_process(prefix):
     results_df.to_csv(prefix+'_madhyperesults.csv', index=False)
     print(f"Number of pairs: {results_df.shape[0]}")
 
-def correlation_process(prefix,min_wells=4,filter_before_top3=False):
+def correlation_process(prefix,min_wells=2,filter_before_top3=False):
     print("start load:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     bigmas = mx.array(np.loadtxt(prefix+'_bigmas.tsv', delimiter='\t', dtype=np.float32))
     bigmbs = mx.array(np.loadtxt(prefix+'_bigmbs.tsv', delimiter='\t', dtype=np.float32))
